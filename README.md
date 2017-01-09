@@ -5,9 +5,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/PKCCheck.svg?style=flat)](http://cocoapods.org/pods/PKCCheck)
 
   
-<img src="https://github.com/pikachu987/PKCCheck/blob/master/image1.png?raw=true" height="400" width="200" >
+<img src="https://github.com/pikachu987/PKCCheck/blob/master/image1.png?raw=true" height="300" width="140" >
 
-<img src="https://github.com/pikachu987/PKCCheck/blob/master/image2.png?raw=true" height="400" width="200" >
+<img src="https://github.com/pikachu987/PKCCheck/blob/master/image2.png?raw=true" height="300" width="140" >
 
 
 

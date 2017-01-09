@@ -39,9 +39,9 @@ open class PKCCheck {
             for description in currentRoute.outputs {
                 DispatchQueue.main.async {
                     if description.portType == AVAudioSessionPortHeadphones {
-                        self.delegate?.pkcCheckPlugIn!()
+                        self.delegate?.pkcCheckPlugIn?()
                     } else {
-                        self.delegate?.pkcCeckPlugOut!()
+                        self.delegate?.pkcCeckPlugOut?()
                     }
                 }
             }
@@ -55,11 +55,11 @@ open class PKCCheck {
         switch audioRouteChangeReason {
         case AVAudioSessionRouteChangeReason.newDeviceAvailable.rawValue:
             DispatchQueue.main.async {
-                self.delegate?.pkcCheckPlugIn!()
+                self.delegate?.pkcCheckPlugIn?()
             }
         case AVAudioSessionRouteChangeReason.oldDeviceUnavailable.rawValue:
             DispatchQueue.main.async {
-                self.delegate?.pkcCeckPlugOut!()
+                self.delegate?.pkcCeckPlugOut?()
             }
         default:
             break
@@ -87,7 +87,7 @@ open class PKCCheck {
         let degree: CGFloat = level/(self.maxDecibelDegree - self.minDecibelDegree)
         let radian: CGFloat = level*CGFloat(M_PI)/180
         self.append(level)
-        self.delegate?.pkcCheckDecibel!(level, average: self.decibelArray.average, degree: degree, radian: radian)
+        self.delegate?.pkcCheckDecibel?(level, average: self.decibelArray.average, degree: degree, radian: radian)
     }
     
     
@@ -107,16 +107,16 @@ extension PKCCheck{
     open func decibelCheck(_ secondPerDecibelCheck: Int = 50){
         do{
             if AVAudioSession.sharedInstance().recordPermission() == .denied{
-                self.delegate?.pkcCheckDecibelPermissionDenied!()
+                self.delegate?.pkcCheckDecibelPermissionDenied?()
             }else if AVAudioSession.sharedInstance().recordPermission() == .granted{
-                self.delegate?.pkcCheckDecibelPermissionGranted!()
+                self.delegate?.pkcCheckDecibelPermissionGranted?()
             }else if AVAudioSession.sharedInstance().recordPermission() == .undetermined{
-                self.delegate?.pkcCheckDecibelPermissionUndetermined!()
+                self.delegate?.pkcCheckDecibelPermissionUndetermined?()
                 AVAudioSession.sharedInstance().requestRecordPermission({ (permission) in
                     if permission{
-                        self.delegate?.pkcCheckDecibelPermissionGranted!()
+                        self.delegate?.pkcCheckDecibelPermissionGranted?()
                     }else{
-                        self.delegate?.pkcCheckDecibelPermissionDenied!()
+                        self.delegate?.pkcCheckDecibelPermissionDenied?()
                     }
                 })
             }
@@ -143,7 +143,7 @@ extension PKCCheck{
             
             self.levelTimer = Timer.scheduledTimer(timeInterval: Double(1/secondPerDecibelCheck), target: self, selector: #selector(self.levelTimerCallback), userInfo: nil, repeats: true)
         }catch let err{
-            self.delegate?.pkcCheckSoundErr!(err)
+            self.delegate?.pkcCheckSoundErr?(err)
         }
     }
 }
