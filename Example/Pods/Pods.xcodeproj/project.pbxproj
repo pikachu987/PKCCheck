@@ -313,6 +313,9 @@
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					6F8A5E1D581341C6CA8354EF5C4A49EA = {
+						LastSwiftMigration = 0820;
+					};
 					AA77CEB2331F59C4BE19EDBA10BF9AE3 = {
 						LastSwiftMigration = 0820;
 					};
@@ -440,6 +443,7 @@
 				PRODUCT_NAME = Pods_PKCCheck_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -664,6 +668,7 @@
 				PRODUCT_NAME = Pods_PKCCheck_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
