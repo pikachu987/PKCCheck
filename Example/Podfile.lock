@@ -1,0 +1,16 @@
+PODS:
+  - PKCCheck (0.1.0)
+
+DEPENDENCIES:
+  - PKCCheck (from `../`)
+
+EXTERNAL SOURCES:
+  PKCCheck:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PKCCheck: efd62035e36bea6c940b0d7c1bb4e68ed336a095
+
+PODFILE CHECKSUM: bfdc8432dd5d0e02aceffa23b35fcec4fe3ba6a7
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PKCCheck_Example' do
+  pod 'PKCCheck', :path => '../'
+
+  target 'PKCCheck_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

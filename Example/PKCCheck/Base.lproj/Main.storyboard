@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MQl-QA-PWt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="NPH-Eb-Go5">
+            <objects>
+                <viewController id="MQl-QA-PWt" customClass="ViewController" customModule="PKCCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lkk-HH-1LO"/>
+                        <viewControllerLayoutGuide type="bottom" id="5U5-AD-Kph"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zSc-fX-e7a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef5-4R-4Wj">
+                                <rect key="frame" x="112" y="259" width="150" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niddle.png" translatesAutoresizingMaskIntoConstraints="NO" id="LM5-pS-PLo">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LM5-pS-PLo" secondAttribute="trailing" id="StU-hg-Ae3"/>
+                                    <constraint firstItem="LM5-pS-PLo" firstAttribute="top" secondItem="Ef5-4R-4Wj" secondAttribute="top" id="gCx-oG-IaD"/>
+                                    <constraint firstAttribute="width" constant="150" id="nLX-j3-JZw"/>
+                                    <constraint firstAttribute="height" constant="150" id="uH1-GM-GUg"/>
+                                    <constraint firstItem="LM5-pS-PLo" firstAttribute="leading" secondItem="Ef5-4R-4Wj" secondAttribute="leading" id="vhj-oU-tq6"/>
+                                    <constraint firstAttribute="bottom" secondItem="LM5-pS-PLo" secondAttribute="bottom" id="yeC-8x-cdn"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXZ-Yt-o2L">
+                                <rect key="frame" x="10" y="30" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fB-21-YPz">
+                                <rect key="frame" x="323" y="30" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JXZ-Yt-o2L" firstAttribute="leading" secondItem="zSc-fX-e7a" secondAttribute="leading" constant="10" id="64I-g4-E2U"/>
+                            <constraint firstItem="Ef5-4R-4Wj" firstAttribute="centerY" secondItem="zSc-fX-e7a" secondAttribute="centerY" id="Hjg-cD-NtT"/>
+                            <constraint firstAttribute="trailing" secondItem="1fB-21-YPz" secondAttribute="trailing" constant="10" id="Sv1-uA-dsJ"/>
+                            <constraint firstItem="1fB-21-YPz" firstAttribute="top" secondItem="Lkk-HH-1LO" secondAttribute="bottom" constant="10" id="ZR2-CU-hh0"/>
+                            <constraint firstItem="Ef5-4R-4Wj" firstAttribute="centerX" secondItem="zSc-fX-e7a" secondAttribute="centerX" id="mhM-xk-Qvh"/>
+                            <constraint firstItem="JXZ-Yt-o2L" firstAttribute="top" secondItem="Lkk-HH-1LO" secondAttribute="bottom" constant="10" id="tjj-kS-3rN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="Ef5-4R-4Wj" id="8pL-C3-RgC"/>
+                        <outlet property="niddleView" destination="LM5-pS-PLo" id="Tcv-UF-qia"/>
+                        <outlet property="permissionLbl" destination="JXZ-Yt-o2L" id="TQT-yP-DW7"/>
+                        <outlet property="plugLbl" destination="1fB-21-YPz" id="BR4-tb-t48"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNL-VH-Nfp" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="niddle.png" width="400" height="400"/>
+    </resources>
+</document>
