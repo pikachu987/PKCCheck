@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="NPH-Eb-Go5">
             <objects>
-                <viewController id="MQl-QA-PWt" customClass="ViewController" customModule="PKCCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MQl-QA-PWt" customClass="ViewController" customModule="PKCCheck_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lkk-HH-1LO"/>
                         <viewControllerLayoutGuide type="bottom" id="5U5-AD-Kph"/>
@@ -50,18 +50,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzc-GC-ZI1">
+                                <rect key="frame" x="10" y="637" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start:" destination="MQl-QA-PWt" eventType="touchUpInside" id="Y2x-c9-YTb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDk-qF-4a3">
+                                <rect key="frame" x="333" y="637" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="MQl-QA-PWt" eventType="touchUpInside" id="GlX-Ty-2In"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2N-lJ-VpK">
+                                <rect key="frame" x="187.5" y="667" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5U5-AD-Kph" firstAttribute="top" secondItem="mzc-GC-ZI1" secondAttribute="bottom" id="4fp-8I-ssF"/>
                             <constraint firstItem="JXZ-Yt-o2L" firstAttribute="leading" secondItem="zSc-fX-e7a" secondAttribute="leading" constant="10" id="64I-g4-E2U"/>
+                            <constraint firstAttribute="trailing" secondItem="GDk-qF-4a3" secondAttribute="trailing" constant="10" id="Ap0-lh-frU"/>
+                            <constraint firstItem="mzc-GC-ZI1" firstAttribute="leading" secondItem="zSc-fX-e7a" secondAttribute="leading" constant="10" id="FP8-Ad-ez0"/>
+                            <constraint firstItem="5U5-AD-Kph" firstAttribute="top" secondItem="GDk-qF-4a3" secondAttribute="bottom" id="HIR-Z7-tvN"/>
                             <constraint firstItem="Ef5-4R-4Wj" firstAttribute="centerY" secondItem="zSc-fX-e7a" secondAttribute="centerY" id="Hjg-cD-NtT"/>
                             <constraint firstAttribute="trailing" secondItem="1fB-21-YPz" secondAttribute="trailing" constant="10" id="Sv1-uA-dsJ"/>
+                            <constraint firstItem="K2N-lJ-VpK" firstAttribute="centerX" secondItem="zSc-fX-e7a" secondAttribute="centerX" id="YQr-aE-yDQ"/>
                             <constraint firstItem="1fB-21-YPz" firstAttribute="top" secondItem="Lkk-HH-1LO" secondAttribute="bottom" constant="10" id="ZR2-CU-hh0"/>
+                            <constraint firstItem="5U5-AD-Kph" firstAttribute="top" secondItem="K2N-lJ-VpK" secondAttribute="bottom" id="fXR-Dd-TFZ"/>
                             <constraint firstItem="Ef5-4R-4Wj" firstAttribute="centerX" secondItem="zSc-fX-e7a" secondAttribute="centerX" id="mhM-xk-Qvh"/>
                             <constraint firstItem="JXZ-Yt-o2L" firstAttribute="top" secondItem="Lkk-HH-1LO" secondAttribute="bottom" constant="10" id="tjj-kS-3rN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="average" destination="K2N-lJ-VpK" id="pkA-QT-gGa"/>
                         <outlet property="backgroundView" destination="Ef5-4R-4Wj" id="8pL-C3-RgC"/>
                         <outlet property="niddleView" destination="LM5-pS-PLo" id="Tcv-UF-qia"/>
                         <outlet property="permissionLbl" destination="JXZ-Yt-o2L" id="TQT-yP-DW7"/>
