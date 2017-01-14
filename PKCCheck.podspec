@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PKCCheck'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'Sound Decible Check And Plug Delegate'
 
   s.description      = 'Sound Decible Check And Plug Delegate - plug in/ plug out / decibel / permission'
