@@ -19,38 +19,266 @@
 
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+
+
+<br><br>
+
+
+- import the PKCCheck header
+~~~~
+import PKCCheck
+~~~~
+
+
+<br><br>
+
+
+
+
+
+- ViewController
 ~~~~
 import PKCCheck
 
-self.pkccheck.delegate = self
-//self.pkccheck.minDecibelDegree = 45
-//self.pkccheck.maxDecibelDegree = 315
-self.pkccheck.decibelCheck()
+class ViewController: UIViewController{
+  let pkcCheck = PKCCheck()
+  override func viewDidLoad() {
+        super.viewDidLoad()
+        self.pkcCheck.delegate = self
+    }
+}
+
+~~~~
+
+
+
+<br><br>
+
+
+
+
+
+- AudioAccessCheck
+
+~~~~
+pkcCheck.audioAccessCheck()
+~~~~
+
+~~~~
+
+extension ViewController: PKCCheckDelegate{
+    func pkcCheckAudioPermissionUndetermined() {
+        print("audioAccess: undetermined (first approach)")
+    }
+    
+    func pkcCheckAudioPermissionGranted() {
+        print("audioAccess: granted")
+    }
+    
+    func pkcCheckAudioPermissionDenied() {
+        print("audioAccess: denied")
+        self.pkcCheck.permissionsChange()
+    }
+}
+
+~~~~
+
+
+
+
+<br><br>
+
+
+
+
+- CameraAccessCheck
+
+~~~~
+pkcCheck.cameraAccessCheck()
+~~~~
+
+~~~~
+
+extension ViewController: PKCCheckDelegate{
+    func pkcCheckCameraPermissionUndetermined() {
+        print("cameraAccess: undetermined (first approach)")
+    }
+    
+    func pkcCheckCameraPermissionGranted() {
+        print("cameraAccess: granted")
+    }
+    
+    func pkcCheckCameraPermissionDenied() {
+        print("cameraAccess: denied")
+        self.pkcCheck.permissionsChange()
+    }
+}
+
+~~~~
+
+
+
+
+<br><br>
+
+
+
+
+- PhotoAccessCheck
+
+~~~~
+pkcCheck.photoAccessCheck()
+~~~~
+
+~~~~
+
+extension ViewController: PKCCheckDelegate{
+    func pkcCheckPhotoPermissionUndetermined() {
+        print("photoAccess: undetermined (first approach)")
+    }
+    
+    func pkcCheckPhotoPermissionGranted() {
+        print("photoAccess: granted")
+    }
+    
+    func pkcCheckPhotoPermissionDenied() {
+        print("photoAccess: denied")
+        self.pkcCheck.permissionsChange()
+    }
+}
+
+~~~~
+
+
+<br><br>
+
+- PlugCheck
+
+~~~~
+pkcCheck.plugAccessCheck()
+~~~~
+
+~~~~
+
+extension ViewController: PKCCheckDelegate{
+    func pkcCheckPlugIn() {
+        print("plugIn")
+    }
+    
+    func pkcCeckPlugOut() {
+        print("plugOut")
+    }
+}
+
+~~~~
+
+<br><br>
+
+- DecibelCheck
+
+~~~~
+//pkcCheck.minDecibelDegree = 45
+//pkcCheck.maxDecibelDegree = 315
+pkcCheck.decibelStart()
+pkcCheck.decibelStop()
+~~~~
+
+~~~~
 
 extension ViewController: PKCCheckDelegate{
     func pkcCheckDecibel(_ level: CGFloat, average: CGFloat, degree: CGFloat, radian: CGFloat) {
-        self.niddleView.transform = CGAffineTransform(rotationAngle: radian)
+        
     }
     func pkcCheckSoundErr(_ error: Error) {
-        print("error: \(error)")
+        print("sound error: \(error)")
     }
+}
+
+~~~~
+
+<br><br>
+
+
+- PermissionsChange
+
+~~~~
+pkcCheck.permissionsChange()
+~~~~
+
+
+
+
+<br><br>
+
+- Delegate All
+~~~~
+extension ViewController: PKCCheckDelegate{
+    func pkcCheckAudioPermissionUndetermined() {
+        print("audioAccess: undetermined (first approach)")
+    }
+    
+    func pkcCheckAudioPermissionGranted() {
+        print("audioAccess: granted")
+    }
+    
+    func pkcCheckAudioPermissionDenied() {
+        print("audioAccess: denied")
+        self.pkcCheck.permissionsChange()
+    }
+    
+    
+    
+    func pkcCheckCameraPermissionUndetermined() {
+        print("cameraAccess: undetermined (first approach)")
+    }
+    
+    func pkcCheckCameraPermissionGranted() {
+        print("cameraAccess: granted")
+    }
+    
+    func pkcCheckCameraPermissionDenied() {
+        print("cameraAccess: denied")
+        self.pkcCheck.permissionsChange()
+    }
+    
+    
+    
+    func pkcCheckPhotoPermissionUndetermined() {
+        print("photoAccess: undetermined (first approach)")
+    }
+    
+    func pkcCheckPhotoPermissionGranted() {
+        print("photoAccess: granted")
+    }
+    
+    func pkcCheckPhotoPermissionDenied() {
+        print("photoAccess: denied")
+        self.pkcCheck.permissionsChange()
+    }
+    
+    
+    
     func pkcCheckPlugIn() {
-        self.plugLbl.text = "PlugIn"
+        print("plugIn")
     }
+    
     func pkcCeckPlugOut() {
-        self.plugLbl.text = "PlugOut"
+        print("plugOut")
     }
-    func pkcCheckDecibelPermissionDenied() {
-        self.permissionLbl.text = "denied"
+    
+    
+    
+    func pkcCheckDecibel(_ level: CGFloat, average: CGFloat, degree: CGFloat, radian: CGFloat) {
+        
     }
-    func pkcCheckDecibelPermissionGranted() {
-        self.permissionLbl.text = "granted"
-    }
-    func pkcCheckDecibelPermissionUndetermined() {
-        self.permissionLbl.text = "undetermined"
+    func pkcCheckSoundErr(_ error: Error) {
+        print("sound error: \(error)")
     }
 }
 ~~~~
+
+<br><br><br><br>
 
 ## Requirements
 
