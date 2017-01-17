@@ -50,6 +50,7 @@ class ViewController: UIViewController {
     @IBAction func decibelStart(_ sender: Any) {
         //self.pkcCheck.minDecibelDegree = 45
         //self.pkcCheck.maxDecibelDegree = 315
+        
         self.pkcCheck.decibelStart()
     }
     
